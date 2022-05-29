@@ -1,9 +1,12 @@
 <?php 
 
     get_header();
-    ?><h2 class="page-title"><?php echo get_the_title(); ?></h2>
+    ?>
+    <div class="page-title"><?php the_title(); ?></div>
+    
+    
+
     <?php
     the_content();
     get_footer();
-
 ?>
