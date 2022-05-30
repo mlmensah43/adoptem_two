@@ -1,0 +1,51 @@
+.row{
+    justify-content: center;
+}
+.pet-card{
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    width: 15rem;
+}
+.pet-card > .card-img-top{
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding: 0px;
+    height: 15rem;
+}
+.pet-card > .card-body{
+    padding: 10px;
+}
+
+.pet-name{
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.pet-breed{
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.pet-age{
+    background-color: #b9a9e220;
+    color: #B9A9E2;
+    padding: 4px 10px;
+    max-width: 6vw;
+    border-radius: 99px;
+    text-decoration: none;
+}
+.info-btn {
+    background: none;
+    border: none; /* Remove borders */
+    color: green; /* White text */
+    cursor: pointer; /* Mouse pointer on hover */
+    height: 4px;
+    width: 4px;
+  }
+  
+  /* Darker background on mouse-over */
+  .info-btn:hover {
+    color: blue;
+  }
+ 

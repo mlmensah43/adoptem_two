@@ -21,16 +21,16 @@
       <!-- <?php wp_nav_menu(array(
         'theme_location' => 'MainSiteMenuLocation')); ?> -->
         <ul class="navbar-nav mx-auto">
-          <li class="nav-item active"><a class="nav-link" href="<?php echo site_url('/available-pets') ?>">available pets</a></li>
-          <li class="nav-item active"><a class="nav-link" href="<?php echo site_url('/about-us') ?>">about us</a></li>
-          <li class="nav-item active"><a class="nav-link" href="<?php echo site_url('/blog') ?>">blog</a></li>
+          <li class="nav-item active" <?php if(is_page('pets')) echo 'id="current-page"'?>><a class="nav-link" href="<?php echo site_url('/pets') ?>">available pets</a></li>
+          <li class="nav-item active" <?php if(is_page('about-us')) echo 'id="current-page"'?>><a class="nav-link" href="<?php echo site_url('/about-us') ?>">about us</a></li>
+          <li class="nav-item active" <?php if(get_post_type() == 'post') echo 'id="current-page"'?>><a class="nav-link" href="<?php echo site_url('/blog') ?>">blog</a></li>
         </ul>
       </div>
     </div> 
-    <div class="navbar-icons navbarNav">
+    <!-- <div class="navbar-icons navbarNav">
       <i class="fa-solid fa-heart"></i>
       <span class="js-search-trigger site-header__search-trigger"><i class="fa fa-search" aria-hidden="true"></i></span>
-    </div>
+    </div> -->
 
   </nav>
 </header>

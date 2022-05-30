@@ -1,25 +1,26 @@
-<?php get_header();?>
- <div class="nav-scroller py-1 mb-2 blog-categories">
-    <nav class="nav d-flex justify-content-between">
-      <a class="p-2 link-secondary" href="#">Events</a>
-      <a class="p-2 link-secondary" href="#">Info</a>
-      <a class="p-2 link-secondary" href="#">News</a>
-      <a class="p-2 link-secondary" href="#">Stories</a>
-      <a class="p-2 link-secondary" href="#">Tips</a>
-      <a class="p-2 link-secondary" href="#">Wildlife</a>
-    </nav>
-  </div>
-</div>
+<?php 
+/*
+Template Name: Full-width layout
+Template Post Type: page
+*/
 
-<main class="container">
+get_header();
+    $blog_posts = new WP_Query(array(
+        'posts_per_page' => 1
+    ));
+    while($blog_posts->have_posts()){
+        $blog_posts->the_post();
+?>
+
+<div class="blog-page">
   <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
     <div class="col-md-6 px-0">
-      <h1 class="display-4 fst-italic">Title of a longer featured blog post</h1>
-      <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.</p>
-      <p class="lead mb-0"><a href="#" class="text-white fw-bold">Continue reading...</a></p>
+      <a href="<?php the_permalink(); ?>"><h1 class="display-4 fst-italic"><?php the_title() ?></h1></a>
+      <p class="lead my-3"> <?php echo wp_trim_words(get_the_content(),20); ?> </p>
+      <p class="lead mb-0"><a href="<?php the_permalink(); ?>" class="text-white fw-bold">Continue reading...</a></p>
     </div>
   </div>
-
+        <?php } wp_reset_postdata();?>
   <div class="row mb-2">
     <div class="col-md-6">
       <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
@@ -31,7 +32,7 @@
           <a href="#" class="stretched-link">Continue reading</a>
         </div>
         <div class="col-auto d-none d-lg-block">
-        <img class="bd-placeholder-img" width="200" height="250" src="<?php echo get_theme_file_uri('/assets/images/blog-hero.jpg')?>">
+        <!-- <img class="bd-placeholder-img" width="200" height="250" src="<?php echo get_theme_file_uri('/assets/images/blog-hero.jpg')?>"> -->
 
         </div>
       </div>
@@ -46,7 +47,7 @@
           <a href="#" class="stretched-link">Continue reading</a>
         </div>
         <div class="col-auto d-none d-lg-block">
-          <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+          <!-- <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
 
         </div>
       </div>
@@ -217,9 +218,8 @@
       </div>
     </div>
 
-</main>
+</div>
+    </div>
 
-<?php
-    get_footer();
-?>
+ <?php get_footer(); ?>
 
