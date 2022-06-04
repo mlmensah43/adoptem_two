@@ -6,3 +6,15 @@
 .site-footer a{
     color: #f9f9f9;
 }
+.footer-line{
+    color: #f9f9f9;
+    width: 80%
+}
+#newsletter1{
+    background: none;
+    border-radius: 99px;
+    width: 45%;
+    margin-right: 10px;
+}
+
+
